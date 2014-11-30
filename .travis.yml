@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - '0.10'
+before_install:
+  - currentfolder=${PWD##*/}
+  - if [ "$currentfolder" != 'generator-ctools-layout' ]; then cd .. && eval "mv $currentfolder generator-ctools-layout" && cd generator-ctools-layout; fi
+

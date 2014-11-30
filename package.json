@@ -1,0 +1,39 @@
+{
+  "name": "generator-ctools-layout",
+  "version": "0.1.0",
+  "description": "Yeoman generator",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "pixelwhip/generator-ctools-layout",
+  "author": {
+    "name": "John Ferris",
+    "url": "https://github.com/pixelwhip"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "drupal",
+    "ctools",
+    "layout"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.17.0",
+    "chalk": "^0.5.0",
+    "yosay": "^0.3.0"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "underscore": "^1.7.0"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  }
+}
