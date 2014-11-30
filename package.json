@@ -1,7 +1,7 @@
 {
   "name": "generator-ctools-layout",
   "version": "0.1.0",
-  "description": "Yeoman generator",
+  "description": "Yeoman generator for Drupal's ctools layout plugins.",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "pixelwhip/generator-ctools-layout",

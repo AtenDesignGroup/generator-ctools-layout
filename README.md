@@ -6,23 +6,11 @@ This is a Yeoman generator for Drupal's ctools layout plugins. This creates all 
 
 ## Getting Started
 
-### What is Yeoman?
-
-Trick question. It's not a thing. It's this guy:
-
-![](http://i.imgur.com/JHaAlBJ.png)
-
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
-
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
+Install Yeoman if you haven't already.
 
 ```bash
 npm install -g yo
 ```
-
-### Yeoman Generators
-
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
 
 To install generator-ctools-layout from npm, run:
 
@@ -30,13 +18,22 @@ To install generator-ctools-layout from npm, run:
 npm install -g generator-ctools-layout
 ```
 
-Create a new directory in your ctools layout plugins folder with the machine name of your layout. From inside that directory type :
+Create a new directory in your ctools layout plugins folder with the machine name of your layout. For example, if you have a layout named *Landing Page* you would type the following:
 
 ```bash
+mkdir landing_page
+```
+
+Now go into your newly created layout plugin folder and let Yeoman do his thing.
+
+```bash
+cd landing_page
 yo ctools-layout
 ```
 
 Yeoman will ask you some questions about your layout then build everything out for you!
+
+For more information about ctools layouts see (https://www.drupal.org/node/495654)[https://www.drupal.org/node/495654].
 
 ### Getting To Know Yeoman
 
