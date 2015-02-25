@@ -25,7 +25,7 @@
     "layout"
   ],
   "dependencies": {
-    "chalk": "^0.5.0",
+    "chalk": "^1.0.0",
     "underscore": "^1.7.0",
     "underscore.string": "^2.4.0",
     "yeoman-generator": "^0.17.0",
