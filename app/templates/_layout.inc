@@ -1,6 +1,10 @@
 <?php
+/**
+ * @file
+ * Ctools layout <%= _.trim(name) %>.
+ */
 
-// Plugin definition
+// Plugin definition.
 $plugin = array(
   'title' => t('<%= name %>'),
   'category' => t('<%= category %>'),
@@ -9,7 +13,7 @@ $plugin = array(
   'css' => '<%= _.slugify(id) %>.css',
   'admin css' => 'admin-<%= _.slugify(id) %>.css',
   'regions' => array(
-    <%_.forEach(regions, function (name) {%> '<%= _.underscored(name) %>' => t('<%= _.trim(name) %>'),
+    <%_.forEach(regions, function (name) {%>'<%=_.underscored(name) %>' => t('<%= _.trim(name) %>'),
     <% }); %>
   ),
 );
