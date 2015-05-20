@@ -1,0 +1,7 @@
+-# @file
+-# Template for <%= name %> layout.
+
+<%_.forEach(regions, function (name) {%>
+- if ($content['<%= _.underscored(name) %>'])
+  = $content['<%= _.underscored(name) %>']
+<% }); %>

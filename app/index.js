@@ -53,6 +53,12 @@ var CtoolsLayoutGenerator = yeoman.generators.Base.extend({
         name: 'useScss',
         message: 'Would you like to use Scss for styling?',
         default: true
+      },
+      {
+        type: 'confirm',
+        name: 'useHaml',
+        message: 'Would you like to use haml as template language?',
+        default: true
       }
     ];
 
@@ -63,6 +69,7 @@ var CtoolsLayoutGenerator = yeoman.generators.Base.extend({
       this.layoutCategory = props.layoutCategory;
       this.addAdminCss = props.addAdminCss;
       this.useScss = props.useScss;
+      this.useHaml = props.useHaml;
       this.layoutRegions = _.words(props.layoutRegions, ',');
 
       done();
@@ -83,7 +90,19 @@ var CtoolsLayoutGenerator = yeoman.generators.Base.extend({
     var stylesheetSuffix = this.useScss ? '.scss' : '.css';
 
     this.template('_layout.inc', this.layoutId + '.inc', context);
-    this.template('_layout.tpl.php', _.slugify(this.layoutModule + '-' + this.layoutId) + '.tpl.php', context);
+    if (this.useHaml) {
+      this.template(
+        '_layout.tpl.haml',
+        _.slugify(this.layoutModule + '-' + this.layoutId) + '.tpl.haml',
+        context
+      );
+    } else {
+      this.template(
+        '_layout.tpl.php',
+        _.slugify(this.layoutModule + '-' + this.layoutId) + '.tpl.php',
+        context
+      );
+    }
     this.template(
       '_layout.css',
       this.layoutId + stylesheetSuffix,
