@@ -57,7 +57,7 @@ var CtoolsLayoutGenerator = yeoman.generators.Base.extend({
       {
         type: 'confirm',
         name: 'useHaml',
-        message: 'Would you like to use haml as template language?',
+        message: 'Would you like to use haml as template language? (default: php)',
         default: true
       }
     ];
