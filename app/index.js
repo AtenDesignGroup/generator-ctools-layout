@@ -55,10 +55,10 @@ var CtoolsLayoutGenerator = yeoman.generators.Base.extend({
         default: true
       },
       {
-        type: 'confirm',
-        name: 'useHaml',
-        message: 'Would you like to use haml as template language? (default: php)',
-        default: true
+        type: 'list',
+        name: 'templateName',
+        message: 'What template language do you want to use?',
+        choices: ['php', 'haml']
       }
     ];
 
@@ -69,7 +69,7 @@ var CtoolsLayoutGenerator = yeoman.generators.Base.extend({
       this.layoutCategory = props.layoutCategory;
       this.addAdminCss = props.addAdminCss;
       this.useScss = props.useScss;
-      this.useHaml = props.useHaml;
+      this.templateName = props.templateName;
       this.layoutRegions = _.words(props.layoutRegions, ',');
 
       done();
@@ -90,19 +90,11 @@ var CtoolsLayoutGenerator = yeoman.generators.Base.extend({
     var stylesheetSuffix = this.useScss ? '.scss' : '.css';
 
     this.template('_layout.inc', this.layoutId + '.inc', context);
-    if (this.useHaml) {
-      this.template(
-        '_layout.tpl.haml',
-        _.slugify(this.layoutModule + '-' + this.layoutId) + '.tpl.haml',
-        context
-      );
-    } else {
-      this.template(
-        '_layout.tpl.php',
-        _.slugify(this.layoutModule + '-' + this.layoutId) + '.tpl.php',
-        context
-      );
-    }
+    this.template(
+      '_layout.tpl.' + this.templateName,
+      _.slugify(this.layoutModule + '-' + this.layoutId) + '.tpl.' + this.templateName,
+      context
+    );
     this.template(
       '_layout.css',
       this.layoutId + stylesheetSuffix,
