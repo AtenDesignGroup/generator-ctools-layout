@@ -58,7 +58,8 @@ var CtoolsLayoutGenerator = yeoman.generators.Base.extend({
         type: 'list',
         name: 'templateName',
         message: 'What template language do you want to use?',
-        choices: ['php', 'haml']
+        choices: ['php', 'haml'],
+        default: 'php'
       }
     ];
 
