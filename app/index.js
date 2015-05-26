@@ -53,6 +53,13 @@ var CtoolsLayoutGenerator = yeoman.generators.Base.extend({
         name: 'useScss',
         message: 'Would you like to use Scss for styling?',
         default: true
+      },
+      {
+        type: 'list',
+        name: 'templateName',
+        message: 'What template language do you want to use?',
+        choices: ['php', 'haml'],
+        default: 'php'
       }
     ];
 
@@ -63,6 +70,7 @@ var CtoolsLayoutGenerator = yeoman.generators.Base.extend({
       this.layoutCategory = props.layoutCategory;
       this.addAdminCss = props.addAdminCss;
       this.useScss = props.useScss;
+      this.templateName = props.templateName;
       this.layoutRegions = _.words(props.layoutRegions, ',');
 
       done();
@@ -83,7 +91,11 @@ var CtoolsLayoutGenerator = yeoman.generators.Base.extend({
     var stylesheetSuffix = this.useScss ? '.scss' : '.css';
 
     this.template('_layout.inc', this.layoutId + '.inc', context);
-    this.template('_layout.tpl.php', _.slugify(this.layoutModule + '-' + this.layoutId) + '.tpl.php', context);
+    this.template(
+      '_layout.tpl.' + this.templateName,
+      _.slugify(this.layoutModule + '-' + this.layoutId) + '.tpl.' + this.templateName,
+      context
+    );
     this.template(
       '_layout.css',
       this.layoutId + stylesheetSuffix,
